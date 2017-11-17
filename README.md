@@ -34,14 +34,14 @@ adonis new <project-name> --api-only
 Output
 
 ```
-_       _             _         _
+    _       _             _         _
    / \   __| | ___  _ __ (_)___    | |___
   / _ \ / _` |/ _ \| '_ \| / __|_  | / __|
  / ___ \ (_| | (_) | | | | \__ \ |_| \__ \
 /_/   \_\__,_|\___/|_| |_|_|___/\___/|___/
 
 ✔ Your current Node.js & npm version match the AdonisJs requirements!
-✔ Cloned [adonisjs/adonis-api-only]
+✔ Cloned [adonisjs/adonis-api-app]
 ✔ npm: Dependencies installed
 ✔ Default environment variables copied
 ✔ generated unique APP_KEY

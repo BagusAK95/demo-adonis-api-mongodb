@@ -28,3 +28,9 @@ Route.group(() => {
   Route.put('/articles/:id', 'ArticleController.update')
   Route.delete('/articles/:id', 'ArticleController.destroy')
 }).prefix('api/v1')
+
+Route.group(() => {
+  Route.get('/user-detail', 'UserController.show').middleware('auth')
+  Route.post('/user-login', 'UserController.login')
+  Route.get('/user-logout', 'UserController.logout').middleware('auth')
+}).prefix('api/v1')
