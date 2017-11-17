@@ -41,7 +41,7 @@ _       _             _         _
 /_/   \_\__,_|\___/|_| |_|_|___/\___/|___/
 
 ✔ Your current Node.js & npm version match the AdonisJs requirements!
-✔ Cloned [adonisjs/adonis-fullstack-app]
+✔ Cloned [adonisjs/adonis-api-only]
 ✔ npm: Dependencies installed
 ✔ Default environment variables copied
 ✔ generated unique APP_KEY
