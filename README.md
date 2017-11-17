@@ -48,7 +48,7 @@ _       _             _         _
 ┌───────────────────────────────────┐
 │        Application crafted        │
 │                                   │
-│        cd yardstick               │
+│        cd <project-name>          │
 │        adonis serve --dev         │
 └───────────────────────────────────┘
 ```
