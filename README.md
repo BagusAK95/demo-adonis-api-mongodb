@@ -212,7 +212,6 @@ You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_rout
 ## Query MongoDB in Controllers
 
 ```
-'use strict'
 const Article = use('App/Models/Article')
 
 class ArticleController {
@@ -244,8 +243,6 @@ class ArticleController {
                   .paginate(Number(params.page), Number(params.limit))
   }
 }
-
-module.exports = ArticleController
 ```
 
 You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
