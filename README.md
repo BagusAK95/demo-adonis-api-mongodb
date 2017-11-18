@@ -149,3 +149,5 @@ DB_USER=root
 DB_PASSWORD=<secret-password>
 DB_DATABASE=db_demo_adonis
 ```
+
+You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
