@@ -83,3 +83,52 @@ Output
   "greeting": "Hello world in JSON"
 }
 ```
+
+# Install lucid-mongo
+
+lucid-mongo is a mongo query builder and ORM. It also has support for database migrations, seeds and factories as @adonis/lucid.
+
+Use with AdonisJS framework
+
+```
+adonis install lucid-mongo
+```
+
+Use with NPM
+
+```
+npm i --save lucid-mongo
+```
+
+Make sure to register the lucid provider to make use of Database and LucidMongo models. The providers are registered inside start/app.js
+
+```
+const providers = [
+  // ...
+  'lucid-mongo/providers/LucidMongoProvider'
+]
+
+const aceProviders = [
+  // ...
+  'lucid-mongo/providers/MigrationsProvider'
+]
+```
+
+Make sure to register the database configuration to make a connection to MongoDB. The configurations are registered inside config/database.js
+
+```
+mongodb: {
+  client: 'mongodb',
+  connection: {
+    host: Env.get('DB_HOST', 'localhost'),
+    port: Env.get('DB_PORT', 27017),
+    user: Env.get('DB_USER', 'root'),
+    password: Env.get('DB_PASSWORD', ''),
+    database: Env.get('DB_DATABASE', 'adonis'),
+    auth: {
+       source: Env.get('DB_AUTH_SOURCE', ''),
+       mechanism: Env.get('DB_AUTH_MECHANISM', '')
+    }
+  }
+}
+```
