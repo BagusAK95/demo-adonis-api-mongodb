@@ -197,7 +197,14 @@ You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_bind
 If you like building web apps around REST conventions then route resources helps you in defining conventional routes by writing less code.
 
 ```
-Route.resource('users', 'UsersController')
+Route.group(() => {
+  Route.get('/articles', 'ArticleController.index')
+  Route.get('/articles/:page/:limit', 'ArticleController.paginate')
+  Route.post('/articles', 'ArticleController.store')
+  Route.get('/articles/:id', 'ArticleController.show')
+  Route.put('/articles/:id', 'ArticleController.update')
+  Route.delete('/articles/:id', 'ArticleController.destroy')
+}).prefix('api/v1')
 ```
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_route_resources
@@ -205,39 +212,40 @@ You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_rout
 # Query MongoDB in Controllers
 
 ```
-const User = use('App/Models/User')
+'use strict'
+const Article = use('App/Models/Article')
 
-class UserController {
+class ArticleController {
   index () {
-    return User.all()
+    return Article.all()
   }
 
   store ({request}) {
-    return User.create(request.all())
+    return Article.create(request.all())
   }
 
   show({params}){
-    return User.where({"_id" : params.id})
-               .fetch()
+    return Article.where({"_id" : params.id})
+                  .fetch()
   }
 
   update({params, request}){
-    return User.where({"_id" : params.id})
-               .update(request.all())
+    return Article.where({"_id" : params.id})
+                  .update(request.all())
   }
 
   destroy({params}){
-    return User.where({"_id" : params.id})
-               .delete()
+    return Article.where({"_id" : params.id})
+                  .delete()
   }
 
   paginate({params}){
-    return User.query()
-               .paginate(Number(params.page), Number(params.limit))
+    return Article.query()
+                  .paginate(Number(params.page), Number(params.limit))
   }
 }
 
-module.exports = UserController
+module.exports = ArticleController
 ```
 
 You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
