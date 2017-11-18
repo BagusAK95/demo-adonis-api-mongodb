@@ -249,7 +249,7 @@ You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
 
 ## Authentication with JWT
 
-#### Registering middleware
+### Registering middleware
 
 ```
 const globalMiddleware = [
@@ -257,7 +257,7 @@ const globalMiddleware = [
 ]
 ```
 
-#### Config
+### Config
 
 Configuration for authentication is saved inside config/auth.js
 
@@ -276,7 +276,7 @@ jwt: {
 }
 ```
 
-#### Password
+### Password
 
 Password must be in hash with HashProvider to be matched by AuthProvider.
 
@@ -287,7 +287,7 @@ const safePassword = Hash.make(request.input('password'))
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/encryption-and-hashing#_hashing_values
 
-#### Login
+### Login
 
 ```
 class UserController {
@@ -310,7 +310,7 @@ Output
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/authentication
 
-#### Get User
+### Get User
 
 Set the Authorization = Bearer <your-token> header to authenticate the request.
 
@@ -322,7 +322,7 @@ class UserController {
 }
 ```
 
-#### Routes
+### Routes
 
 ```
 Route.group(() => {
