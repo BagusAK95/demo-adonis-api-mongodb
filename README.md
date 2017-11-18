@@ -152,9 +152,7 @@ DB_DATABASE=db_demo_adonis
 
 You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
 
-# Lucid Models
-
-Lucid is an implementation of Active Record pattern in Javascript. If you are coming from the Laravel or the Rails world, then you may be quite familiar with it.
+# Models
 
 The reason behind using Models over writing plain database queries is the ease of use and the powerful API to drive the data flow.
 
@@ -174,7 +172,7 @@ Output
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/lucid
 
-# Binding controllers
+# Controllers
 
 Defining closures as the route actions are not scalable, since writing all the code inside a single file is never desired and neither practical.
 
@@ -194,7 +192,7 @@ Output
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_binding_controllers
 
-# Route resources
+# Route
 
 If you like building web apps around REST conventions then route resources helps you in defining conventional routes by writing less code.
 
