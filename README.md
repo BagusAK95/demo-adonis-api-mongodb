@@ -192,7 +192,7 @@ Output
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_binding_controllers
 
-# Route
+# Routes
 
 If you like building web apps around REST conventions then route resources helps you in defining conventional routes by writing less code.
 
@@ -202,20 +202,42 @@ Route.resource('users', 'UsersController')
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_route_resources
 
-# Query MongoDB
+# Query MongoDB in Controllers
 
 ```
-const users = User.all()
+const User = use('App/Models/User')
 
-const users = User.where({ name: 'peter' })
-                  .limit(10)
-                  .skip(20)
-                  .fetch()
+class UserController {
+  index () {
+    return User.all()
+  }
 
-const users = User.where({ or: [{ gender: 'female', age: { gte: 20 } },
-                                { gender: 'male', age: { gte: 22 } }
-                               ]})
-                  .fetch()
+  store ({request}) {
+    return User.create(request.all())
+  }
+
+  show({params}){
+    return User.where({"_id" : params.id})
+               .fetch()
+  }
+
+  update({params, request}){
+    return User.where({"_id" : params.id})
+               .update(request.all())
+  }
+
+  destroy({params}){
+    return User.where({"_id" : params.id})
+               .delete()
+  }
+
+  paginate({params}){
+    return User.query()
+               .paginate(Number(params.page), Number(params.limit))
+  }
+}
+
+module.exports = UserController
 ```
 
 You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
