@@ -132,3 +132,20 @@ mongodb: {
   }
 }
 ```
+
+And also make sure to set the database connection inside .env
+
+```
+HOST=127.0.0.1
+PORT=3333
+APP_URL=http://${HOST}:${PORT}
+NODE_ENV=development
+CACHE_VIEWS=false
+APP_KEY=<secret-app-key>
+DB_CONNECTION=mongodb
+DB_HOST=127.0.0.1
+DB_PORT=27017
+DB_USER=root
+DB_PASSWORD=<secret-password>
+DB_DATABASE=db_demo_adonis
+```
