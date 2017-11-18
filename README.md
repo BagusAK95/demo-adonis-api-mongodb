@@ -250,6 +250,90 @@ module.exports = ArticleController
 
 You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
 
+# Authentication with JWT
+
+## Registering middleware
+
+```
+const globalMiddleware = [
+  'Adonis/Middleware/AuthInit'
+]
+```
+
+## Config
+
+Configuration for authentication is saved inside config/auth.js
+
+```
+authenticator: 'jwt',
+
+jwt: {
+  serializer: 'lucid',
+  model: 'App/Models/User',
+  scheme: 'jwt',
+  uid: 'email',
+  password: 'password',
+  options: {
+    secret: 'self::app.appKey'
+  }
+}
+```
+
+## Password
+
+Password must be in hash with HashProvider to be matched by AuthProvider.
+
+```
+const Hash = use('Hash')
+const safePassword = Hash.make(request.input('password'))
+```
+
+You can see the full documentation at http://adonisjs.com/docs/4.0/encryption-and-hashing#_hashing_values
+
+## Login
+
+```
+class UserController {
+  login ({ request, auth }) {
+    const { email, password } = request.all()
+    return auth.attempt(email, password)
+  }
+}
+```
+
+Output
+
+```
+{
+  type: 'Bearer',
+  token: <your-token>,
+  refreshToken: null
+}
+```
+
+You can see the full documentation at http://adonisjs.com/docs/4.0/authentication
+
+## Get User
+
+Set the Authorization = Bearer <your-token> header to authenticate the request.
+
+```
+class UserController {
+  show({auth}){
+    return auth.getUser()
+  }
+}
+```
+
+## Routes
+
+```
+Route.group(() => {
+  Route.get('/user-detail', 'UserController.show').middleware('auth')
+  Route.post('/user-login', 'UserController.login')
+}).prefix('api/v1')
+```
+
 # Test Project
 
 Click the button below to test this project via Postman
