@@ -204,6 +204,24 @@ Route.resource('users', 'UsersController')
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_route_resources
 
+# Query MongoDB
+
+```
+const users = User.all()
+
+const users = User.where({ name: 'peter' })
+                  .limit(10)
+                  .skip(20)
+                  .fetch()
+
+const users = User.where({ or: [{ gender: 'female', age: { gte: 20 } },
+                                { gender: 'male', age: { gte: 22 } }
+                               ]})
+                  .fetch()
+```
+
+You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
+
 # Test Project
 
 Click the button below to test this project via Postman
