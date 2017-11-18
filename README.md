@@ -1,13 +1,13 @@
 # AdonisJS v4.0 REST API with MongoDB
 
-# Requirements
+## Requirements
 
 Since AdonisJs is a Node.js framework, please make sure Node.js is installed on your operating system with npm. Below are the minimum required versions.
 
 1. Node.js 8.0 or greater.
 2. Npm 3.0 or greater.
 
-# Install AdonisJS Framework
+## Install AdonisJS Framework
 
 Once requirements to run AdonisJs Apps are met, the next step is to install the cli tool, which will help us in creating new AdonisJs applications.
 
@@ -23,7 +23,7 @@ adonis --help
 ```
 
 
-# Creating new project
+## Creating new project
 
 Let’s start by creating a new application using the cli tool new command. It accepts the project name/folder as a required parameter.
 
@@ -53,7 +53,7 @@ Output
 └───────────────────────────────────┘
 ```
 
-# Running application
+## Running application
 
 Once the installation process is completed, you can cd into the directory and run the following command to start the HTTP server.
 
@@ -84,7 +84,7 @@ Output
 }
 ```
 
-# Install Lucid Mongo
+## Install Lucid Mongo
 
 Lucid Mongo is a mongo query builder and ORM. It also has support for database migrations, seeds and factories as @adonis/lucid.
 
@@ -152,7 +152,7 @@ DB_DATABASE=db_demo_adonis
 
 You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
 
-# Models
+## Models
 
 The reason behind using Models over writing plain database queries is the ease of use and the powerful API to drive the data flow.
 
@@ -172,7 +172,7 @@ Output
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/lucid
 
-# Controllers
+## Controllers
 
 Defining closures as the route actions are not scalable, since writing all the code inside a single file is never desired and neither practical.
 
@@ -192,7 +192,7 @@ Output
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_binding_controllers
 
-# Routes
+## Routes
 
 If you like building web apps around REST conventions then route resources helps you in defining conventional routes by writing less code.
 
@@ -209,7 +209,7 @@ Route.group(() => {
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_route_resources
 
-# Query MongoDB in Controllers
+## Query MongoDB in Controllers
 
 ```
 'use strict'
@@ -250,9 +250,9 @@ module.exports = ArticleController
 
 You can see the full documentation at https://www.npmjs.com/package/lucid-mongo
 
-# Authentication with JWT
+## Authentication with JWT
 
-## Registering middleware
+#### Registering middleware
 
 ```
 const globalMiddleware = [
@@ -260,7 +260,7 @@ const globalMiddleware = [
 ]
 ```
 
-## Config
+#### Config
 
 Configuration for authentication is saved inside config/auth.js
 
@@ -279,7 +279,7 @@ jwt: {
 }
 ```
 
-## Password
+#### Password
 
 Password must be in hash with HashProvider to be matched by AuthProvider.
 
@@ -290,7 +290,7 @@ const safePassword = Hash.make(request.input('password'))
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/encryption-and-hashing#_hashing_values
 
-## Login
+#### Login
 
 ```
 class UserController {
@@ -313,7 +313,7 @@ Output
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/authentication
 
-## Get User
+#### Get User
 
 Set the Authorization = Bearer <your-token> header to authenticate the request.
 
@@ -325,7 +325,7 @@ class UserController {
 }
 ```
 
-## Routes
+#### Routes
 
 ```
 Route.group(() => {
