@@ -204,6 +204,8 @@ Route.resource('users', 'UsersController')
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_route_resources
 
-# Postman
+# Test Project
+
+Click the button below to test this project via Postman
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0589e4566e940a293bc6)
