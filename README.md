@@ -1,4 +1,4 @@
-# AdonisJS v4.0 REST API
+# AdonisJS v4.0 REST API with MongoDB
 
 # Requirements
 
@@ -7,7 +7,7 @@ Since AdonisJs is a Node.js framework, please make sure Node.js is installed on 
 1. Node.js 8.0 or greater.
 2. Npm 3.0 or greater.
 
-# Cli tool
+# Install AdonisJS Framework
 
 Once requirements to run AdonisJs Apps are met, the next step is to install the cli tool, which will help us in creating new AdonisJs applications.
 
@@ -23,7 +23,7 @@ adonis --help
 ```
 
 
-# Creating new app
+# Creating new project
 
 Let’s start by creating a new application using the cli tool new command. It accepts the project name/folder as a required parameter.
 
@@ -84,9 +84,9 @@ Output
 }
 ```
 
-# Install lucid-mongo
+# Install Lucid Mongo
 
-lucid-mongo is a mongo query builder and ORM. It also has support for database migrations, seeds and factories as @adonis/lucid.
+Lucid Mongo is a mongo query builder and ORM. It also has support for database migrations, seeds and factories as @adonis/lucid.
 
 Use with AdonisJS framework
 
