@@ -158,7 +158,7 @@ Lucid is an implementation of Active Record pattern in Javascript. If you are co
 
 The reason behind using Models over writing plain database queries is the ease of use and the powerful API to drive the data flow.
 
-The lucid models are stored as ES6 classes inside app/Models directory, where each model represents a database table
+The lucid models are stored as ES6 classes inside app/Models directory, where each model represents a database table.
 
 Let’s see how to create and make use of a Model to read/write to the database. You can make use of the adonis command to generate a model.
 
@@ -203,3 +203,7 @@ Route.resource('users', 'UsersController')
 ```
 
 You can see the full documentation at http://adonisjs.com/docs/4.0/routing#_route_resources
+
+# Postman
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/0589e4566e940a293bc6)
